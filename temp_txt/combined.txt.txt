@@ -1,0 +1,95 @@
+web: gunicorn server:app
+from flask import Flask, request, jsonify, render_template
+import openai
+from openai_key import *
+
+app = Flask(__name__)
+
+@app.route("/", methods=["GET"])
+def index():
+    return render_template("index.html")
+
+@app.route("/ask", methods=["POST"])
+def ask():
+    user_message = request.form["question"]
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "user", "content": user_message}
+        ]
+    )
+    answer = response["choices"][0]["message"]["content"]
+    return jsonify(answer=answer)
+
+if __name__ == "__main__":
+    app.run()
+import openai
+
+openai.api_key = "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"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chatbot</title>
+</head>
+<body>
+<input type="text" id="question" placeholder="Ask a question">
+<button onclick="ask()">Submit</button>
+<p id="response"></p>
+
+<script>
+async function ask() {
+    const question = document.getElementById("question").value;
+    const response = await fetch("/ask", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: `question=${encodeURIComponent(question)}`,
+    });
+    const data = await response.json();
+    document.getElementById("response").innerText = data.answer;
+}
+</script>
+</body>
+</html>
+import openai
+
+openai.api_key = "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"
+flask
+gunicorn
+openai
+python-3.9.15
+from flask import Flask, request, jsonify, render_template
+import openai
+from openai_key import *
+
+app = Flask(__name__)
+
+@app.route("/", methods=["GET"])
+def index():
+    return render_template("index.html")
+
+@app.route("/ask", methods=["POST"])
+def ask():
+    user_message = request.form["question"]
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "user", "content": user_message}
+        ]
+    )
+    answer = response["choices"][0]["message"]["content"]
+    return jsonify(answer=answer)
+
+if __name__ == "__main__":
+    app.run()
+
+Dependencies:
+
+flask
+gunicorn
+openai
