@@ -1,31 +1,20 @@
-"""
-Flask server for handling user questions and interacting with OpenAI API.
-"""
-
 import logging
 import os
 from flask import Flask, request, jsonify, render_template
 import openai
 
-# Setup logging
 logging.basicConfig(level=logging.INFO)
 
 app = Flask(__name__)
 
-# Set OpenAI API Key from environment variable
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 @app.route("/", methods=["GET"])
 def index():
-    """Render the main page."""
     return render_template("index.html")
 
 @app.route("/ask", methods=["POST"])
 def ask():
-    """
-    Handle POST requests to interact with OpenAI API.
-    Retrieve user question from form and return model's answer.
-    """
     try:
         user_message = request.form.get("question")
         if not user_message:
@@ -55,3 +44,4 @@ def ask():
 
 if __name__ == "__main__":
     app.run()
+
