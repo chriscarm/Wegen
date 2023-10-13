@@ -4,7 +4,6 @@ Flask server for handling user questions and interacting with OpenAI API.
 
 import logging
 import os
-
 from flask import Flask, request, jsonify, render_template
 import openai
 
@@ -46,9 +45,10 @@ def ask():
         logging.error("OpenAI API Error: %s", str(e))
         return jsonify(error="Error interacting with OpenAI API."), 500
     
-    except Exception as e:  # pylint: disable=broad-except
+    except Exception as e:
         logging.error("Error: %s", str(e))
         return jsonify(error="Internal Server Error."), 500
 
 if __name__ == "__main__":
     app.run()
+
