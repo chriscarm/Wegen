@@ -45,10 +45,13 @@ def ask():
         logging.error("OpenAI API Error: %s", str(e))
         return jsonify(error="Error interacting with OpenAI API."), 500
     
+    except ValueError as e:
+        logging.error("Value Error: %s", str(e))
+        return jsonify(error=str(e)), 400
+    
     except Exception as e:
-        logging.error("Error: %s", str(e))
+        logging.error("Unexpected Error: %s", str(e))
         return jsonify(error="Internal Server Error."), 500
 
 if __name__ == "__main__":
     app.run()
-
