@@ -1,28 +1,45 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chatbot</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>AI Workforce Match</title>
 </head>
 <body>
-<input type="text" id="question" placeholder="Ask a question">
-<button onclick="ask()">Submit</button>
-<p id="response"></p>
-
-<script>
-async function ask() {
-    const question = document.getElementById("question").value;
-    const response = await fetch("/ask", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: `question=${encodeURIComponent(question)}`,
-    });
-    const data = await response.json();
-    document.getElementById("response").innerText = data.answer;
-}
-</script>
+    <header>
+        <img src="logo.png" alt="Company Logo">
+        <nav>
+            <a href="#">Services</a>
+            <a href="#">We're Hiring!</a>
+            <a href="#">Blog</a>
+            <a href="#" class="cta">Let's Talk!</a>
+        </nav>
+    </header>
+    <main>
+        <h1>We match your workforce with top-tier AI experts.</h1>
+        <p>Gain a competitive edge by hiring pre-vetted, AI consultants, developers, content creators, strategists, and more.</p>
+        <div class="buttons">
+            <button>Hire an Expert</button>
+            <button>Apply as an Expert</button>
+        </div>
+        <div class="images">
+            <!-- Your images here -->
+        </div>
+    </main>
+    <!-- Additional HTML for chat bar and chat overlay -->
+    <div id="chat-bar">Click here to chat with us instantly</div>
+    <div id="chat-overlay">
+        <div id="chat-header">
+            <button id="close-chat">Close</button>
+        </div>
+        <div id="chat-content">
+            <!-- Chat messages will appear here -->
+        </div>
+    </div>
+    <script src="scripts.js"></script>
 </body>
 </html>
+
+
