@@ -1,134 +1,141 @@
 body {
-    body {
-        font-family: 'Helvetica', sans-serif;
-        background-color: #F2F2F7;
-        margin: 0;
-        padding: 0;
-    }
-    
-    header {
-        display: flex;
-        justify-content: space-between;
-        padding: 20px 100px;
-        align-items: center;
-        background-color: #FFFFFF;
-    }
-    
-    nav a {
-        margin: 0 10px;
-        text-decoration: none;
-        color: black;
-        padding: 10px;
-        border-radius: 20px;
-        transition: background-color 0.3s;
-    }
-    
-    nav a:hover {
-        background-color: #EAEAEA;
-    }
-    
-    .cta {
-        background-color: #000;
-        color: #FFF;
-        padding: 10px 20px;
-        border-radius: 20px;
-    }
-    
-    main {
-        padding: 100px 10%;
-        text-align: center;
-        background-color: #FFFFFF;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-        border-radius: 20px;
-        margin: 50px 5%;
-    }
-    
-    h1 {
-        font-size: 2.5em;
-        margin-bottom: 30px;
-        color: #333;
-    }
-    
-    p {
-        font-size: 1.1em;
-        max-width: 800px;
-        margin: 0 auto 50px;
-        color: #999;
-    }
-    
-    .buttons {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        margin-top: 30px;
-    }
-    
-    button {
-        padding: 15px 50px;
-        border: none;
-        border-radius: 50px;
-        cursor: pointer;
-        background-color: #E0E0E6;
-        transition: background-color 0.3s;
-        font-size: 1.1em;
-        color: #333;
-    }
-    
-    button:hover {
-        background-color: #D0D0D6;
-    }
-    
-    .images {
-        display: flex;
-        gap: 30px;
-        margin-top: 80px;
-        justify-content: center;
-    }
-    
-    /* Additional CSS for chat bar and chat overlay */
-    #chat-bar {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        padding: 15px 0;
-        text-align: center;
-        background-color: #000;
-        color: #FFF;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-    
-    #chat-bar:hover {
-        background-color: #333;
-    }
-    
-    #chat-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(255, 255, 255, 0.9);
-    }
-    
-    #chat-header {
-        padding: 20px;
-        border-bottom: 1px solid #E0E0E6;
-    }
-    
-    #close-chat {
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-size: 1.2em;
-    }
-    
-    #chat-content {
-        padding: 20px;
-        height: calc(100% - 60px);
-        overflow-y: scroll;
-    }
-    
+    font-family: 'Helvetica', sans-serif;
+    background-color: #F2F2F7;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 100px;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #EAEAEA;
+}
+
+.cta {
+    background-color: #000;
+    color: #FFF;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+main {
+    padding: 100px 10%;
+    text-align: center;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    margin: 50px 5%;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    color: #999;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+button {
+    padding: 15px 50px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: #E0E0E6;
+    transition: background-color 0.3s;
+    font-size: 1.1em;
+    color: #333;
+}
+
+button:hover {
+    background-color: #D0D0D6;
+}
+
+.images {
+    display: flex;
+    gap: 30px;
+    margin-top: 80px;
+    justify-content: center;
+}
+
+/* Additional CSS for chat bar and chat overlay */
+#chat-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    background-color: #000;
+    color: #FFF;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#chat-bar:hover {
+    background-color: #333;
+}
+
+#chat-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+}
+
+#chat-header {
+    padding: 20px;
+    border-bottom: 1px solid #E0E0E6;
+}
+
+#close-chat {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+#chat-content {
+    padding: 20px;
+    height: calc(100% - 60px);
+    overflow-y: scroll;
+}
+
+#question, #response {
+    width: 100%;
+    margin-top: 20px;
+}
+
+button {
+    margin-top: 10px;
 }
